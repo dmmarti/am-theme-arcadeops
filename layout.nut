@@ -7,7 +7,6 @@ class UserConfig {
  </ label="Background Image", help="Select background image", options="blue,green,red", order=2 /> bg_image = "red";
  </ label="Marquee Image", help="Choose game or mame marquee", options="game,mame", order=4 /> mq_image = "game";
  </ label="Snap Audio", help="Enable or disable snap audio (default enable)", options="enable,disable", order=6 /> enable_audio="enable";
- </ label="Font Type", help="Choose layout font (default comic)", options="comic,verdana,tahoma,impact,arial", order=8 /> font_type="comic";
  </ label="Select wheel style", help="Select wheel style", options="curved", order=10 /> enable_list_type="curved";
  </ label="Select spinwheel art", help="The artwork to spin", options="wheel", order=12 /> orbit_art="wheel";
  </ label="Wheel transition time", help="Time in milliseconds for wheel spin.", order=16 /> transition_ms="25";   
@@ -25,23 +24,6 @@ local flh = fe.layout.height;
 // modules
 fe.load_module("fade");
 fe.load_module( "animate" );
-
-// Font type
-if ( my_config["font_type"] == "comic") {
- fe.layout.font="Comic";
-}
-if ( my_config["font_type"] == "verdana") {
- fe.layout.font="Verdana";
-}
-if ( my_config["font_type"] == "tahoma") {
- fe.layout.font="Tahoma";
-}
-if ( my_config["font_type"] == "impact") {
- fe.layout.font="Impact";
-}
-if ( my_config["font_type"] == "arial") {
- fe.layout.font="Arial";
-}
 
 fe.load_module( "fade" );
 
