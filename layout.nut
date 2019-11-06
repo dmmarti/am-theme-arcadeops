@@ -5,7 +5,7 @@
 // Layout Options
 class UserConfig {
  </ label="Background Image", help="Select background image", options="blue,green,red", order=2 /> bg_image = "red";
- </ label="Marquee Image", help="Choose game or mame marquee", options="game,mame", order=4 /> mq_image = "game";
+ </ label="Marquee Image", help="Choose game, arcade, or mame marquee", options="game,arcade,mame", order=4 /> mq_image = "game";
  </ label="Snap Audio", help="Enable or disable snap audio (default enable)", options="enable,disable", order=6 /> enable_audio="enable";
  </ label="Select wheel style", help="Select wheel style", options="curved", order=10 /> enable_list_type="curved";
  </ label="Select spinwheel art", help="The artwork to spin", options="wheel", order=12 /> orbit_art="wheel";
@@ -145,8 +145,14 @@ fe.add_transition_callback("sound_transitions")
 
 // Marquee Image
 
-local mq = fe.add_artwork( "marquee_mame", flx*0.08285, fly*0.005, flw*0.515, flh*0.25 );
+local mq = fe.add_artwork( "marquee_arcade", flx*0.08285, fly*0.005, flw*0.515, flh*0.25 );
 
+if ( my_config["mq_image"] == "arcade") {
+ local mq = fe.add_artwork( "marquee_arcade", flx*0.08285, fly*0.005, flw*0.515, flh*0.25 );
+}
+if ( my_config["mq_image"] == "mame") {
+ local mq = fe.add_artwork( "marquee_mame", flx*0.08285, fly*0.005, flw*0.515, flh*0.25 );
+}
 if ( my_config["mq_image"] == "game") {
  local mq = fe.add_artwork( "marquee" flx*0.08285, fly*0.005, flw*0.515, flh*0.25 );
 }
